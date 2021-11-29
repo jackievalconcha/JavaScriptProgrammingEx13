@@ -54,3 +54,18 @@ people.push(finalPerson);
 console.log('\nPrint all the people');
 //foreach loop call toString
 people.forEach(per => console.log(per.toString()));
+
+//Use filter method to query collection of objects based off conditions
+//Filter returns array
+console.log('\nQuery last name Carter');
+let query = people.filter(function(per) { return per.lastName == 'Carter' });
+query.forEach(q => console.log(q.toString()));
+
+let findChris = people.filter(function(p) { return p.firstName == 'Chris' || p.lastName == 'Cusack' });
+
+if (findChris.length > 0) {
+    console.log('\nRecord found:');
+    console.log(findChris[0].toString());
+} else {
+    console.log('\nRecord not found');
+}
