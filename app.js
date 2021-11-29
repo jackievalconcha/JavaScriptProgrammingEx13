@@ -17,3 +17,22 @@ console.log(myFirstObject.myFirstStringProperty);
 console.log(myFirstObject.myFirstFloatProperty);
 console.log(myFirstObject.myFunction());
 console.log(myFirstObject.add(1, 2));
+
+let Person = function(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dateOfBirth = dob;
+    this.age = function() {
+        let now = new Date();
+        let years = now.getFullYear() - this.dateOfBirth.getFullYear();
+
+        if (now.getMonth() < this.dateOfBirth.getMonth() || now.getMonth() == this.dateOfBirth.getMonth() && now.getDay() < this.dateOfBirth.getDay()) {
+            years -= 1;
+        }
+        return years;
+    }
+    this.toString = function() {
+        return `Name: ${this.firstName} ${this.lastName} Age: ${this.age()}`;
+    }
+
+}
