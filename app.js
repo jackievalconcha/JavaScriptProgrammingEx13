@@ -36,3 +36,21 @@ let Person = function(firstName, lastName, dob) {
     }
 
 }
+
+let person = new Person('Chris', 'Cusack', new Date(1996, 7, 12));
+console.log(person);
+console.log(person.toString());
+
+let anotherPerson = new Person('Pat', 'Thebeau', new Date(1990, 2, 18));
+let oneMorePerson = new Person('Stephen', 'Carter', new Date(1900, 4, 12));
+let finalPerson = new Person('Gary', 'Carter', new Date(1945, 2, 5));
+
+let people = [];
+people.push(person);
+people.push(anotherPerson);
+people.push(oneMorePerson);
+people.push(finalPerson);
+
+console.log('\nPrint all the people');
+//foreach loop call toString
+people.forEach(per => console.log(per.toString()));
