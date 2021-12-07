@@ -61,7 +61,8 @@ console.log('\nQuery last name Carter');
 let query = people.filter(function(per) { return per.lastName == 'Carter' });
 query.forEach(q => console.log(q.toString()));
 
-let findChris = people.filter(function(p) { return p.firstName == 'Chris' || p.lastName == 'Cusack' });
+console.log('\nQuery by first and last name');
+let findChris = people.filter(function(p) { return p.firstName == 'Chris' && p.lastName == 'Cusack' });
 
 if (findChris.length > 0) {
     console.log('\nRecord found:');
